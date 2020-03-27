@@ -50,11 +50,11 @@ class RingBuffer:
 
         return list_buffer_contents
 
-new_buffer = RingBuffer(5)
-new_buffer.append('a')
-new_buffer.append('b')
-new_buffer.append('c') 
-print(new_buffer.get())
+# new_buffer = RingBuffer(5)
+# new_buffer.append('a')
+# new_buffer.append('b')
+# new_buffer.append('c') 
+# print(new_buffer.get())
 
 
 # ----------------Stretch Goal-------------------
