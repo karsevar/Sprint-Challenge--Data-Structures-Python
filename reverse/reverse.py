@@ -59,9 +59,11 @@ class LinkedList:
             return None 
         elif node.next_node == None:
             self.head = node 
+            return 
         else:
-            self.reverse_list(node.next_node, None)
-            # print(node.value)
+            self.reverse_list(node.next_node, node)
+            node.set_next(prev)
+
 
 
 linked_list_new = LinkedList()
@@ -70,4 +72,4 @@ linked_list_new.add_to_head(2)
 linked_list_new.add_to_head(3)
 linked_list_new.add_to_head(4)
 linked_list_new.reverse_list(linked_list_new.head, None)
-print(linked_list_new.head.value)
+
