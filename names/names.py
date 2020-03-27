@@ -13,14 +13,15 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # For my machine this naive solution runs at 9.84 seconds. The 
-# following solution can be described as a O(n^2) solution because of 
+# following solution can be described as a O(n * n) solution because of 
 # the nested for loops and that in the worst case the algorithm will 
-# have to look through each array twice.
+# have to look through the length of each array to find a match 
+# or not find a match.
 
 # The O(n log(n)) solution for this problem would be using a binary tree 
 # in place of the nested for loops. Though in the worst case this solution 
 # will have a time complexity of O(n * n) since it's efficiency is dependent on 
-# how balanced the binary tree is.
+# how balanced the binary tree is (namely the value of the root node).
 
 # first build out a binary search tree with the methods contains and 
 # insert.
