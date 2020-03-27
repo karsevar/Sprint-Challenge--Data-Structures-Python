@@ -15,6 +15,7 @@ class RingBuffer:
             # if self.current.next is None:
                 # pop the self.storage.head from the doubly linked list 
                 # add the new item to the storage through the method add_to_head
+                # modify self.current to read the current head of the linked list
             # else:
                 # since self.current is holding the most recent entry 
                 # we know that the next node is the least recent 
@@ -27,6 +28,11 @@ class RingBuffer:
             if self.current.next is None:
                 self.storage.remove_from_head() 
                 self.storage.add_to_head(item)
+                self.current = self.storage.head
+            else:
+                self.current.next.value = item 
+                self.current = self.current.next
+                
 
     def get(self):
         # Note:  This is the only [] allowed
