@@ -10,9 +10,23 @@ class RingBuffer:
     def append(self, item):
         # if the length of self.storage is less then self.capacity
             # add the item to the tail 
+            # modify self.current to read the new tail.
+        # else:
+            # if self.current.next is None:
+                # pop the self.storage.head from the doubly linked list 
+                # add the new item to the storage through the method add_to_head
+            # else:
+                # since self.current is holding the most recent entry 
+                # we know that the next node is the least recent 
+                # modify the self.current.next.value with the passed in item 
         
         if self.capacity > len(self.storage):
             self.storage.add_to_tail(item)
+            self.current = self.storage.tail
+        else:
+            if self.current.next is None:
+                self.storage.remove_from_head() 
+                self.storage.add_to_head(item)
 
     def get(self):
         # Note:  This is the only [] allowed
