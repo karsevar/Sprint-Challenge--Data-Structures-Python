@@ -58,9 +58,6 @@ class BinarySearchTree:
                 else:
                     return self.right.contains(target)
 
-# will need to test if inserting 10000 entries will bring about 
-# a recursion depth error upon insertion into the binary tree 
-
 # first initialize the BinarySearchTree with the first value in 
 # either name_1 or name_2 
 
@@ -71,6 +68,19 @@ name_tree = BinarySearchTree(names_1[0])
 for name in range(1, len(names_1)):
     name_tree.insert(names_1[name])
 
+# write an additional for loop that will loop through the names in 
+# names_2 and check if there are any matches in the binary tree 
+    # if name_tree.contains(name) returns True 
+        # append the name in duplicates
+    # else do nothing 
+
+# This solution decreased the search time from 9.84 seconds to only 
+# 0.197 which means that this solution is exponentially better than 
+# the naive solution.
+ 
+for name in names_2:
+    if name_tree.contains(name) == True:
+        duplicates.append(name)
 
 # Replace the nested for loops below with your improvements
 # for name_1 in names_1:
